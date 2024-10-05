@@ -1,0 +1,10 @@
+# Go build artifacts
+/bin/
+/obj/
+/vendor/
+
+# Ignore the .env file
+.env
+
+# Ignore the Go modules cache
+/pkg/mod/

@@ -6,12 +6,13 @@ A simple URL shortener service built with Go using the Fiber framework and Mongo
 
 - Shorten long URLs
 - Redirect to the original URL
-- Store and retrieve URLs from MongoDB
+- Store and retrieve URLs from DB
 - Simple and clean RESTful API
 
 ## Technologies Used
 
 - Go (Golang)
 - Fiber framework
-- MongoDB
-- Dotenv for environment variable management
+- MySQL
+
+Feel free to modified if you interested!

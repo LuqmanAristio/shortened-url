@@ -1,6 +1,6 @@
 # URL Shortener Service
 
-A simple URL shortener service built with Go using the Fiber framework and MongoDB. This application allows users to shorten long URLs and access them easily.
+A simple URL shortener service built with Go using the Fiber framework. This application allows users to shorten long URLs and access them easily.
 
 ## Features
 

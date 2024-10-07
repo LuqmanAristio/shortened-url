@@ -15,4 +15,20 @@ A simple URL shortener service built with Go using the Fiber framework and Mongo
 - Fiber framework
 - MySQL
 
+## Generate Logic
+
+1. Receive Original URL from User
+2. Convert Original URL to Short Unique Text
+3. Store Original URL and Short Text at Database
+4. Response the Short URL
+
+## Using it
+
+1. Just add the short text url after the main URL (ex: localhost:3000/3d8hh3)
+
+## Algorithm
+
+- Base64
+- Key Generation Service
+
 Feel free to modified if you interested!

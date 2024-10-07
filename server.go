@@ -2,13 +2,12 @@ package main
 
 import (
     "log"
-    "github.com/gofiber/fiber/v3"
+    "github.com/gofiber/fiber/v2"
     "github.com/LuqmanAristio/shortened-url/config"
+    "github.com/LuqmanAristio/shortened-url/models"
 )
 
 func main() {
-    config.Connect()
-    
     app := fiber.New(fiber.Config{
         CaseSensitive: true,
         StrictRouting: true,
@@ -16,10 +15,10 @@ func main() {
         AppName: "Test App URL Shortener v1.0.1",
     })
 
-    app.Get("/", func(c fiber.Ctx) error {
-        return c.SendString("Hello 👋!")
-    })
+    config.ConnectDB()
+    config.DB.AutoMigrate(&models.URLShortener{})
 
-    // Start the server on port 3000
+    app.Static("/", "./public")
+    
     log.Fatal(app.Listen(":3000"))
 }

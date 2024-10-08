@@ -1,62 +1,87 @@
+/* Reset some default styles */
+body, h1, h2, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 400px;
     text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.url-form {
+    margin-bottom: 30px;
 }
 
 label {
-    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #555;
 }
 
 input[type="url"] {
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 6px;
+    margin-bottom: 15px;
 }
 
 button {
-    padding: 10px;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3rem;
     background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #218838;
 }
 
+#result {
+    margin-top: 30px;
+}
+
+#shortened-url {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    margin-top: 15px;
+}
+
+#shortened-url:hover {
+    text-decoration: underline;
+}
+
+/* Hide result by default */
 .hidden {
     display: none;
-}
-
-#result {
-    margin-top: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: #007bff;
 }

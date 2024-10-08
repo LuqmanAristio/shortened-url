@@ -3,15 +3,31 @@ document.getElementById("url-form").addEventListener("submit", function(event) {
 
     const urlInput = document.getElementById("url").value;
 
-    // Simulasi permintaan untuk mendapatkan URL pendek (ganti dengan permintaan fetch di server Anda)
-    const shortenedUrl = "http://short.ly/" + btoa(urlInput); // Contoh: menggunakan base64 sebagai pendekatan
+    fetch("http://localhost:3000/shortener", { 
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+            original_url: urlInput
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        const resultDiv = document.getElementById("result");
+        const shortenedUrlLink = document.getElementById("shortened-url");
+        console.log(data);
+        shortenedUrlLink.href = data;
+        shortenedUrlLink.textContent = data;
 
-    // Menampilkan URL pendek
-    const resultDiv = document.getElementById("result");
-    const shortenedUrlLink = document.getElementById("shortened-url");
-
-    shortenedUrlLink.href = shortenedUrl;
-    shortenedUrlLink.textContent = shortenedUrl;
-
-    resultDiv.classList.remove("hidden");
+        resultDiv.classList.remove("hidden");
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 });
